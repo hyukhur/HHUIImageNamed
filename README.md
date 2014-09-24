@@ -1,4 +1,4 @@
 HHUIImageNamed
 ==============
 
-UIImage with name by `imageNamed`
+UIImage with file name by `+[UIImage imageNamed]` and `-[UIImage imageWithContentsOfFile]`
