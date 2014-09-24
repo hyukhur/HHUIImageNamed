@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>90A843E2-E241-4E94-8A61-CB64E9C4E562</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HHUIImageNamed</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9069ED097D77D96FF1A0790C0E90A291A6098D4E</key>
+		<string>https://github.com/hyukhur/HHUIImageNamed.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HHUIImageNamed/HHUIImageNamed.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9069ED097D77D96FF1A0790C0E90A291A6098D4E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hyukhur/HHUIImageNamed.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9069ED097D77D96FF1A0790C0E90A291A6098D4E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9069ED097D77D96FF1A0790C0E90A291A6098D4E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HHUIImageNamed</string>
+		</dict>
+	</array>
+</dict>
+</plist>
