@@ -46,6 +46,7 @@
 		4DB5C61E19D25D6B001D31F1 /* UIImage+HHFileNamedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HHFileNamedImage.h"; sourceTree = "<group>"; };
 		4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HHFileNamedImage.m"; sourceTree = "<group>"; };
 		4DB5C62319D260CF001D31F1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		4DB5C62819D2AAB7001D31F1 /* HHUIImageNamed.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HHUIImageNamed.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 		4DB5C5E419D17453001D31F1 = {
 			isa = PBXGroup;
 			children = (
+				4DB5C62819D2AAB7001D31F1 /* HHUIImageNamed.podspec */,
 				4DB5C61D19D25D6B001D31F1 /* Classess */,
 				4DB5C5EF19D17453001D31F1 /* HHUIImageNamed */,
 				4DB5C60919D17453001D31F1 /* HHUIImageNamedTests */,
@@ -326,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -362,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
