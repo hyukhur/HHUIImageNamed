@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "UIImage+HHFileNamedImage.h"
+
+@interface UIImage ()
+- (NSString *)hh_fileName;
+@end
 
 @interface HHUIImageNamedTests : XCTestCase
 
@@ -25,15 +30,30 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testFinalFunction {
+    UIImage *image = [UIImage imageNamed:@"1"];
+    XCTAssertTrue([[image description] containsString:@"1"]);
+}
+
+- (void)testStoreFileName {
+    UIImage *image = [UIImage imageNamed:@"1"];
+    XCTAssertEqualObjects(@"1", [image hh_fileName]);
+}
+
+- (void)testFinalFunction2 {
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
+    XCTAssertTrue([[image description] containsString:@"1.png"]);
+}
+
+- (void)testStoreFileName2 {
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
+    XCTAssertEqualObjects(@"1.png", [image hh_fileName]);
 }
 
 - (void)testPerformanceExample {
-    // This is an example of a performance test case.
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+        __unused UIImage *imageNamed = [UIImage imageNamed:@"1.png"];
+        __unused UIImage *imageFiled = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
     }];
 }
 
