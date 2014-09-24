@@ -134,7 +134,8 @@
 				4DB5C61E19D25D6B001D31F1 /* UIImage+HHFileNamedImage.h */,
 				4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */,
 			);
-			path = Classess;
+			name = Classess;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		CA02279337214C1AA84472B2 /* Frameworks */ = {
