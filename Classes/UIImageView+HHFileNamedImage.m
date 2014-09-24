@@ -1,55 +1,34 @@
 //
-//  UIImage+HHFileNamedImage.m
+//  UIImageView+HHFileNamedImage.m
 //  HHUIImageNamed
 //
-//  Created by Hyuk Hur on 2014. 9. 24..
+//  Created by Hyuk Hur on 2014. 9. 25..
 //  Copyright (c) 2014년 Hyuk Hur. All rights reserved.
 //
 
-#import "UIImage+HHFileNamedImage.h"
+#import "UIImageView+HHFileNamedImage.h"
 #import <objc/runtime.h>
 
-@implementation UIImage (HHFileNamedImage)
+@interface UIImage (HHFileNamedImage)
+- (NSString *)hh_fileName;
+@end
 
-- (NSString *)hh_fileName
-{
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)hh_setFileName:(NSString *)hh_fileName
-{
-    objc_setAssociatedObject(self, @selector(hh_fileName), hh_fileName, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
+@implementation UIImageView (HHFileNamedImage)
 
 - (NSString *)hh_description
 {
-    if (![self respondsToSelector:@selector(hh_fileName)]) {
+    if (![self image]) {
         return [self hh_description];
     }
-    NSString *fileName = [self hh_fileName];
+    UIImage *image = [self image];
+    if (![image respondsToSelector:@selector(hh_fileName)]) {
+        return [self hh_description];
+    }
+    NSString *fileName = [image hh_fileName];
     if (!fileName) {
         return [self hh_description];
     }
     return [NSString stringWithFormat:@"%@, %@", fileName, [self hh_description]];
-}
-
-/*
- initWithContentsOfFile
- */
-- (instancetype)initWithContentsOfFile_hh:(NSString *)path
-{
-    self = [self initWithContentsOfFile_hh:path];
-    if (self) {
-        [self hh_setFileName:[path lastPathComponent]];
-    }
-    return self;
-}
-
-+ (UIImage *)imageNamed_hh:(NSString *)name
-{
-    UIImage *image = [self imageNamed_hh:name];
-    [image hh_setFileName:name];
-    return image;
 }
 
 + (void)load
@@ -71,8 +50,6 @@
                 method_exchangeImplementations(originalMethod, swizzledMethod);
             }
         }
-        method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithContentsOfFile:)), class_getInstanceMethod(self, @selector(initWithContentsOfFile_hh:)));
-        method_exchangeImplementations(class_getClassMethod(self, @selector(imageNamed:)), class_getClassMethod(self, @selector(imageNamed_hh:)));
     });
 }
 

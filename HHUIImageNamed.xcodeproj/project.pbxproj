@@ -17,6 +17,7 @@
 		4DB5C62019D25D6B001D31F1 /* UIImage+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */; };
 		4DB5C62619D260CF001D31F1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C62319D260CF001D31F1 /* 1.png */; };
 		4DB5C62719D260CF001D31F1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C62319D260CF001D31F1 /* 1.png */; };
+		4DE873CB19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE873CA19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HHFileNamedImage.m"; sourceTree = "<group>"; };
 		4DB5C62319D260CF001D31F1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		4DB5C62819D2AAB7001D31F1 /* HHUIImageNamed.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HHUIImageNamed.podspec; sourceTree = "<group>"; };
+		4DE873C919D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HHFileNamedImage.h"; sourceTree = "<group>"; };
+		4DE873CA19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HHFileNamedImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 			children = (
 				4DB5C61E19D25D6B001D31F1 /* UIImage+HHFileNamedImage.h */,
 				4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */,
+				4DE873C919D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.h */,
+				4DE873CA19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m */,
 			);
 			name = Classess;
 			path = Classes;
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE873CB19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m in Sources */,
 				4DB5C5F919D17453001D31F1 /* ViewController.m in Sources */,
 				4DB5C5F619D17453001D31F1 /* AppDelegate.m in Sources */,
 				4DB5C62019D25D6B001D31F1 /* UIImage+HHFileNamedImage.m in Sources */,

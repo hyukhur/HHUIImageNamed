@@ -40,6 +40,24 @@
     XCTAssertEqualObjects(@"1", [image hh_fileName]);
 }
 
+- (void)testNormalObject {
+    NSString *string = @"test string";
+    XCTAssertFalse([[string description] containsString:@","]);
+}
+
+- (void)testCallTwice {
+    UIImage *image = [UIImage imageNamed:@"1"];
+    XCTAssertTrue([[image description] containsString:@"1"]);
+    XCTAssertTrue([[image description] containsString:@"1"]);
+    XCTAssertTrue([[image description] containsString:@"1"]);
+}
+
+- (void)testUIImageView {
+    UIImage *image = [UIImage imageNamed:@"1.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    XCTAssertTrue([[imageView description] containsString:@"1.png"]);
+}
+
 - (void)testFinalFunction2 {
     UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
     XCTAssertTrue([[image description] containsString:@"1.png"]);
