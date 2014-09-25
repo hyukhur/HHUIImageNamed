@@ -58,21 +58,71 @@
     XCTAssertTrue([[imageView description] containsString:@"1.png"]);
 }
 
-- (void)testFinalFunction2 {
-    UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
-    XCTAssertTrue([[image description] containsString:@"1.png"]);
-}
-
-- (void)testStoreFileName2 {
-    UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
-    XCTAssertEqualObjects(@"1.png", [image hh_fileName]);
-}
-
 - (void)testPerformanceExample {
     [self measureBlock:^{
         __unused UIImage *imageNamed = [UIImage imageNamed:@"1.png"];
         __unused UIImage *imageFiled = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
     }];
 }
+
+- (void)testTrackingFileNameFromContentsOfFile {
+    UIImage *image = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
+    XCTAssertTrue([[image description] containsString:@"1.png"]);
+}
+
+- (void)testTrackingFileNameFromData {
+    NSData *data = [NSData dataWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
+    UIImage *image = [UIImage imageWithData:data];
+    XCTAssertTrue([[image description] containsString:@"1.png"]);
+}
+
+- (void)testTrackingFileNameFromDataWithScale {
+    NSData *data = [NSData dataWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
+    UIImage *image = [UIImage imageWithData:data scale:1];
+    XCTAssertTrue([[image description] containsString:@"1.png"]);
+}
+
+- (void)testTrackingFileNameFromCGImage {
+    CGImageRef imageRef = [[UIImage imageNamed:@"1.png"] CGImage];
+    UIImage *image = [UIImage imageWithCGImage:imageRef];
+    XCTAssertTrue([[image description] containsString:@"1.png"]);
+}
+
+- (void)testTrackingFileNameFromCGImageWithScaleAndOrientation {
+    CGImageRef imageRef = [[UIImage imageNamed:@"1.png"] CGImage];
+    UIImage *image = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:(UIImageOrientationUp)];
+    XCTAssertTrue([[image description] containsString:@"1.png"]);
+}
+
+- (void)testTrackingFileNameFromCIImage {
+    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"1" withExtension:@"png"];
+    CIImage *ciImage = [CIImage imageWithContentsOfURL:fileURL];
+    UIImage *image = [UIImage imageWithCIImage:ciImage];
+    XCTAssertTrue([[image description] containsString:@"1.png"]);
+}
+
+- (void)testTrackingFileNameFromCIImageWithScaleAndOrientation {
+    CIImage *ciImage = [[UIImage imageNamed:@"1.png"] CIImage];
+    UIImage *image = [UIImage imageWithCIImage:ciImage scale:1.0 orientation:(UIImageOrientationUp)];
+    XCTAssertTrue([[image description] containsString:@"1.png"]);
+}
+
+
+- (void)testTrackingFileNameFromDraw {
+    UIImage *image = [UIImage imageNamed:@"1.png"];
+    
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [[UIColor redColor] CGColor]);
+    CGContextFillRect(context, rect);
+    
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    XCTAssertFalse([[image description] containsString:@"1.png"]);
+}
+
 
 @end
