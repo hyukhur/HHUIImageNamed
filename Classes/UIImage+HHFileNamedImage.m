@@ -9,6 +9,7 @@
 #import "UIImage+HHFileNamedImage.h"
 #import <objc/runtime.h>
 
+
 @implementation UIImage (HHFileNamedImage)
 
 - (NSString *)hh_fileName
@@ -33,6 +34,17 @@
     return [NSString stringWithFormat:@"%@, %@", fileName, [self hh_description]];
 }
 
+- (CGImageRef)CGImage_hh
+{
+    [[NSThread currentThread] ]
+    return [self CGImage_hh];
+}
+
+- (CIImage *)CIImage_hh
+{
+    return [self CIImage_hh];
+}
+
 /*
  initWithContentsOfFile
  */
@@ -41,6 +53,33 @@
     self = [self initWithContentsOfFile_hh:path];
     if (self) {
         [self hh_setFileName:[path lastPathComponent]];
+    }
+    return self;
+}
+
+- (instancetype)initWithData_hh:(NSData *)data
+{
+    self = [self initWithData_hh:data];
+    if (self) {
+//        [self hh_setFileName:[path lastPathComponent]];
+    }
+    return self;
+}
+
+- (instancetype)initWithCGImage_hh:(CGImageRef)cgImage scale:(CGFloat)scale orientation:(UIImageOrientation)orientation
+{
+    self = [self initWithCGImage_hh:cgImage scale:scale orientation:orientation];
+    if (self) {
+//        [self hh_setFileName:[path lastPathComponent]];
+    }
+    return self;
+}
+
+- (instancetype)initWithCIImage_hh:(CIImage *)ciImage scale:(CGFloat)scale orientation:(UIImageOrientation)orientation
+{
+    self = [self initWithCIImage_hh:ciImage scale:scale orientation:orientation];
+    if (self) {
+//        [self hh_setFileName:[path lastPathComponent]];
     }
     return self;
 }
@@ -71,7 +110,13 @@
                 method_exchangeImplementations(originalMethod, swizzledMethod);
             }
         }
-        method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithContentsOfFile:)), class_getInstanceMethod(self, @selector(initWithContentsOfFile_hh:)));
+        method_exchangeImplementations(class_getInstanceMethod(self, @selector(CGImage_hh)),            class_getInstanceMethod(self, @selector(CGImage_hh)));
+        method_exchangeImplementations(class_getInstanceMethod(self, @selector(CIImage_hh)),            class_getInstanceMethod(self, @selector(CIImage_hh)));
+
+        method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithContentsOfFile:)),            class_getInstanceMethod(self, @selector(initWithContentsOfFile_hh:)));
+        method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithData:)),                      class_getInstanceMethod(self, @selector(initWithData_hh:)));
+        method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithCGImage:scale:orientation:)), class_getInstanceMethod(self, @selector(initWithCGImage_hh:scale:orientation:)));
+        method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithCIImage:scale:orientation:)), class_getInstanceMethod(self, @selector(initWithCIImage_hh:scale:orientation:)));
         method_exchangeImplementations(class_getClassMethod(self, @selector(imageNamed:)), class_getClassMethod(self, @selector(imageNamed_hh:)));
     });
 }

@@ -65,48 +65,47 @@
     }];
 }
 
-- (void)testTrackingFileNameFromContentsOfFile {
+- (void)testContentsOfFile {
     UIImage *image = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
     XCTAssertTrue([[image description] containsString:@"1.png"]);
 }
 
-- (void)testTrackingFileNameFromData {
+- (void)testData {
     NSData *data = [NSData dataWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
     UIImage *image = [UIImage imageWithData:data];
     XCTAssertTrue([[image description] containsString:@"1.png"]);
 }
 
-- (void)testTrackingFileNameFromDataWithScale {
+- (void)testDataWithScale {
     NSData *data = [NSData dataWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1.png"]];
     UIImage *image = [UIImage imageWithData:data scale:1];
     XCTAssertTrue([[image description] containsString:@"1.png"]);
 }
 
-- (void)testTrackingFileNameFromCGImage {
+- (void)testCGImage {
     CGImageRef imageRef = [[UIImage imageNamed:@"1.png"] CGImage];
     UIImage *image = [UIImage imageWithCGImage:imageRef];
     XCTAssertTrue([[image description] containsString:@"1.png"]);
 }
 
-- (void)testTrackingFileNameFromCGImageWithScaleAndOrientation {
+- (void)testCGImageWithScaleAndOrientation {
     CGImageRef imageRef = [[UIImage imageNamed:@"1.png"] CGImage];
     UIImage *image = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:(UIImageOrientationUp)];
     XCTAssertTrue([[image description] containsString:@"1.png"]);
 }
 
-- (void)testTrackingFileNameFromCIImage {
+- (void)testCIImage {
     NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"1" withExtension:@"png"];
     CIImage *ciImage = [CIImage imageWithContentsOfURL:fileURL];
     UIImage *image = [UIImage imageWithCIImage:ciImage];
     XCTAssertTrue([[image description] containsString:@"1.png"]);
 }
 
-- (void)testTrackingFileNameFromCIImageWithScaleAndOrientation {
+- (void)testCIImageWithScaleAndOrientation {
     CIImage *ciImage = [[UIImage imageNamed:@"1.png"] CIImage];
     UIImage *image = [UIImage imageWithCIImage:ciImage scale:1.0 orientation:(UIImageOrientationUp)];
     XCTAssertTrue([[image description] containsString:@"1.png"]);
 }
-
 
 - (void)testTrackingFileNameFromDraw {
     UIImage *image = [UIImage imageNamed:@"1.png"];
@@ -122,7 +121,7 @@
     UIGraphicsEndImageContext();
     
     XCTAssertFalse([[image description] containsString:@"1.png"]);
+    XCTAssertFalse([[image description] containsString:@"HHUIImageNamedTests"]);
 }
-
 
 @end
