@@ -10,25 +10,25 @@
 #import <objc/runtime.h>
 
 @interface UIImage (HHFileNamedImage)
-- (NSString *)hh_fileName;
+- (NSString *)fileName_hh;
 @end
 
 @implementation UIImageView (HHFileNamedImage)
 
-- (NSString *)hh_description
+- (NSString *)description_hh
 {
     if (![self image]) {
-        return [self hh_description];
+        return [self description_hh];
     }
     UIImage *image = [self image];
-    if (![image respondsToSelector:@selector(hh_fileName)]) {
-        return [self hh_description];
+    if (![image respondsToSelector:@selector(fileName_hh)]) {
+        return [self description_hh];
     }
-    NSString *fileName = [image hh_fileName];
+    NSString *fileName = [image fileName_hh];
     if (!fileName) {
-        return [self hh_description];
+        return [self description_hh];
     }
-    return [NSString stringWithFormat:@"%@, %@", fileName, [self hh_description]];
+    return [NSString stringWithFormat:@"%@, %@", fileName, [self description_hh]];
 }
 
 + (void)load
@@ -37,7 +37,7 @@
     dispatch_once(&onceToken, ^{
         Class class = [self class];
         SEL originalSelector = @selector(description);
-        SEL swizzledSelector = @selector(hh_description);
+        SEL swizzledSelector = @selector(description_hh);
         {
             Method originalMethod = class_getInstanceMethod(class, originalSelector);
             Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
