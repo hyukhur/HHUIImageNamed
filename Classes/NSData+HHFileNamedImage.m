@@ -30,6 +30,15 @@
     return self;
 }
 
++ (nullable instancetype)dataWithContentsOfURL_hh:(NSURL *)url options:(NSDataReadingOptions)readOptionsMask error:(NSError **)errorPtr
+{
+    NSData *data = [self dataWithContentsOfURL_hh:url options:readOptionsMask error:errorPtr];
+    if (data) {
+        [[[NSThread currentThread] threadDictionary] setObject:[url lastPathComponent] forKey:HHUIImageNamedCandidatedFileName];
+    }
+    return data;
+}
+
 #pragma mark -
 
 + (void)load
@@ -39,6 +48,7 @@
         {
             method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithContentsOfFile:options:error:)), class_getInstanceMethod(self, @selector(initWithContentsOfFile_hh:options:error:)));
             method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithContentsOfFile:)), class_getInstanceMethod(self, @selector(initWithContentsOfFile_hh:)));
+            method_exchangeImplementations(class_getClassMethod(self, @selector(dataWithContentsOfURL:options:error:)), class_getClassMethod(self, @selector(dataWithContentsOfURL_hh:options:error:)));
         }
     });
 }

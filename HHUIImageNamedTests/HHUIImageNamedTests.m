@@ -121,6 +121,10 @@
     NSData *data = [NSData dataWithContentsOfURL:[[[NSBundle bundleForClass:self.class] resourceURL] URLByAppendingPathComponent:@"img1.png"] options:(NSDataReadingMappedIfSafe) error:NULL];
     UIImage *image = [UIImage imageWithData:data];
     XCTAssertTrue([[image description] containsString:@"img1.png"]);
+
+    NSData *data2 = [NSData dataWithContentsOfURL:[[[NSBundle bundleForClass:self.class] resourceURL] URLByAppendingPathComponent:@"img2.png"]];
+    UIImage *image2 = [UIImage imageWithData:data2];
+    XCTAssertTrue([[image2 description] containsString:@"img2.png"]);
 }
 
 - (void)testDataWithScale {
@@ -176,6 +180,11 @@
     
     XCTAssertFalse([[image description] containsString:@"img1.png"]);
     XCTAssertFalse([[image description] containsString:@"HHUIImageNamedTests"]);
+}
+
+- (void)testXcodeAssets {
+    UIImage *image = [UIImage imageNamed:@"asset_img1"];
+    XCTAssertTrue([[image description] containsString:@"asset_img1"]);
 }
 
 @end
