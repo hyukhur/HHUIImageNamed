@@ -187,4 +187,12 @@
     XCTAssertTrue([[image description] containsString:@"asset_img1"]);
 }
 
+- (void)testImageInStoryboard {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [sb instantiateInitialViewController];
+    UIImageView *imageView = (UIImageView *)[[vc.view subviews] firstObject];
+    XCTAssertEqualObjects([imageView.image fileName_hh], [[vc nibName] stringByAppendingString:@".nib"]);
+//    XCTAssertTrue([[imageView description] containsString:@"img1.png"]);
+}
+
 @end
