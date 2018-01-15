@@ -118,7 +118,7 @@
 }
 
 - (void)testData {
-    NSData *data = [NSData dataWithContentsOfURL:[[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"img1.png"] options:(NSDataReadingMappedIfSafe) error:NULL];
+    NSData *data = [NSData dataWithContentsOfURL:[[[NSBundle bundleForClass:self.class] resourceURL] URLByAppendingPathComponent:@"img1.png"] options:(NSDataReadingMappedIfSafe) error:NULL];
     UIImage *image = [UIImage imageWithData:data];
     XCTAssertTrue([[image description] containsString:@"img1.png"]);
 }
