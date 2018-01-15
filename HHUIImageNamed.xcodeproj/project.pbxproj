@@ -8,25 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		4D875D66200D00B700654A55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C5FD19D17453001D31F1 /* Images.xcassets */; };
+		4D875D70200D040600654A55 /* HHUIImageNamed.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D875D6E200D040600654A55 /* HHUIImageNamed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D875D73200D040600654A55 /* HHUIImageNamed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D875D6C200D040600654A55 /* HHUIImageNamed.framework */; };
+		4D875D74200D040600654A55 /* HHUIImageNamed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D875D6C200D040600654A55 /* HHUIImageNamed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4D875D79200D04EA00654A55 /* CIImage+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBAB711A0D11FC00E4D26F /* CIImage+HHFileNamedImage.h */; };
+		4D875D7A200D04EA00654A55 /* CIImage+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBAB721A0D11FC00E4D26F /* CIImage+HHFileNamedImage.m */; };
+		4D875D7B200D04EA00654A55 /* UIImage+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB5C61E19D25D6B001D31F1 /* UIImage+HHFileNamedImage.h */; };
+		4D875D7C200D04EA00654A55 /* UIImage+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */; };
+		4D875D7D200D04EA00654A55 /* UIImageView+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE873C919D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.h */; };
+		4D875D7E200D04EA00654A55 /* UIImageView+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE873CA19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m */; };
+		4D875D7F200D04EA00654A55 /* NSData+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBAB771A0D976200E4D26F /* NSData+HHFileNamedImage.h */; };
+		4D875D80200D04EA00654A55 /* NSData+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBAB781A0D976200E4D26F /* NSData+HHFileNamedImage.m */; };
 		4DB5C5F319D17453001D31F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C5F219D17453001D31F1 /* main.m */; };
 		4DB5C5F619D17453001D31F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C5F519D17453001D31F1 /* AppDelegate.m */; };
 		4DB5C5F919D17453001D31F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C5F819D17453001D31F1 /* ViewController.m */; };
 		4DB5C5FC19D17453001D31F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C5FA19D17453001D31F1 /* Main.storyboard */; };
 		4DB5C60119D17453001D31F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C5FF19D17453001D31F1 /* LaunchScreen.xib */; };
 		4DB5C60D19D17453001D31F1 /* HHUIImageNamedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C60C19D17453001D31F1 /* HHUIImageNamedTests.m */; };
-		4DB5C62019D25D6B001D31F1 /* UIImage+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */; };
 		4DB5C62619D260CF001D31F1 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C62319D260CF001D31F1 /* img1.png */; };
 		4DB5C62719D260CF001D31F1 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C62319D260CF001D31F1 /* img1.png */; };
 		4DDBAB6D1A0D0ABB00E4D26F /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDBAB6B1A0D0ABB00E4D26F /* img2.png */; };
 		4DDBAB6E1A0D0ABB00E4D26F /* img3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDBAB6C1A0D0ABB00E4D26F /* img3.png */; };
 		4DDBAB6F1A0D0B1900E4D26F /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDBAB6B1A0D0ABB00E4D26F /* img2.png */; };
 		4DDBAB701A0D0B1D00E4D26F /* img3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDBAB6C1A0D0ABB00E4D26F /* img3.png */; };
-		4DDBAB731A0D11FC00E4D26F /* CIImage+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBAB721A0D11FC00E4D26F /* CIImage+HHFileNamedImage.m */; };
-		4DDBAB791A0D976200E4D26F /* NSData+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBAB781A0D976200E4D26F /* NSData+HHFileNamedImage.m */; };
-		4DE873CB19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE873CA19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4D875D71200D040600654A55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DB5C5E519D17453001D31F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D875D6B200D040600654A55;
+			remoteInfo = HHUIImageNamed;
+		};
 		4DB5C60719D17453001D31F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4DB5C5E519D17453001D31F1 /* Project object */;
@@ -36,8 +50,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4D875D78200D040600654A55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4D875D74200D040600654A55 /* HHUIImageNamed.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		4DB5C5ED19D17453001D31F1 /* HHUIImageNamed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHUIImageNamed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D875D6C200D040600654A55 /* HHUIImageNamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHUIImageNamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D875D6E200D040600654A55 /* HHUIImageNamed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHUIImageNamed.h; sourceTree = "<group>"; };
+		4D875D6F200D040600654A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DB5C5ED19D17453001D31F1 /* HHUIImageNamed_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHUIImageNamed_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB5C5F119D17453001D31F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DB5C5F219D17453001D31F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4DB5C5F419D17453001D31F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,10 +96,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4D875D68200D040600654A55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4DB5C5EA19D17453001D31F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D875D73200D040600654A55 /* HHUIImageNamed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,13 +121,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D875D6D200D040600654A55 /* HHUIImageNamed */ = {
+			isa = PBXGroup;
+			children = (
+				4DB5C61D19D25D6B001D31F1 /* Classes */,
+				4D875D6E200D040600654A55 /* HHUIImageNamed.h */,
+				4D875D6F200D040600654A55 /* Info.plist */,
+			);
+			path = HHUIImageNamed;
+			sourceTree = "<group>";
+		};
 		4DB5C5E419D17453001D31F1 = {
 			isa = PBXGroup;
 			children = (
 				4DB5C62819D2AAB7001D31F1 /* HHUIImageNamed.podspec */,
-				4DB5C61D19D25D6B001D31F1 /* Classes */,
 				4DB5C5EF19D17453001D31F1 /* HHUIImageNamed */,
 				4DB5C60919D17453001D31F1 /* HHUIImageNamedTests */,
+				4D875D6D200D040600654A55 /* HHUIImageNamed */,
 				4DB5C5EE19D17453001D31F1 /* Products */,
 				CA02279337214C1AA84472B2 /* Frameworks */,
 			);
@@ -97,8 +146,9 @@
 		4DB5C5EE19D17453001D31F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DB5C5ED19D17453001D31F1 /* HHUIImageNamed.app */,
+				4DB5C5ED19D17453001D31F1 /* HHUIImageNamed_Example.app */,
 				4DB5C60619D17453001D31F1 /* HHUIImageNamedTests.xctest */,
+				4D875D6C200D040600654A55 /* HHUIImageNamed.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,14 +221,30 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4D875D69200D040600654A55 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D875D79200D04EA00654A55 /* CIImage+HHFileNamedImage.h in Headers */,
+				4D875D7B200D04EA00654A55 /* UIImage+HHFileNamedImage.h in Headers */,
+				4D875D70200D040600654A55 /* HHUIImageNamed.h in Headers */,
+				4D875D7F200D04EA00654A55 /* NSData+HHFileNamedImage.h in Headers */,
+				4D875D7D200D04EA00654A55 /* UIImageView+HHFileNamedImage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		4DB5C5EC19D17453001D31F1 /* HHUIImageNamed */ = {
+		4D875D6B200D040600654A55 /* HHUIImageNamed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DB5C61019D17453001D31F1 /* Build configuration list for PBXNativeTarget "HHUIImageNamed" */;
+			buildConfigurationList = 4D875D75200D040600654A55 /* Build configuration list for PBXNativeTarget "HHUIImageNamed" */;
 			buildPhases = (
-				4DB5C5E919D17453001D31F1 /* Sources */,
-				4DB5C5EA19D17453001D31F1 /* Frameworks */,
-				4DB5C5EB19D17453001D31F1 /* Resources */,
+				4D875D67200D040600654A55 /* Sources */,
+				4D875D68200D040600654A55 /* Frameworks */,
+				4D875D69200D040600654A55 /* Headers */,
+				4D875D6A200D040600654A55 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -186,7 +252,26 @@
 			);
 			name = HHUIImageNamed;
 			productName = HHUIImageNamed;
-			productReference = 4DB5C5ED19D17453001D31F1 /* HHUIImageNamed.app */;
+			productReference = 4D875D6C200D040600654A55 /* HHUIImageNamed.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4DB5C5EC19D17453001D31F1 /* HHUIImageNamed_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DB5C61019D17453001D31F1 /* Build configuration list for PBXNativeTarget "HHUIImageNamed_Example" */;
+			buildPhases = (
+				4DB5C5E919D17453001D31F1 /* Sources */,
+				4DB5C5EA19D17453001D31F1 /* Frameworks */,
+				4DB5C5EB19D17453001D31F1 /* Resources */,
+				4D875D78200D040600654A55 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D875D72200D040600654A55 /* PBXTargetDependency */,
+			);
+			name = HHUIImageNamed_Example;
+			productName = HHUIImageNamed;
+			productReference = 4DB5C5ED19D17453001D31F1 /* HHUIImageNamed_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4DB5C60519D17453001D31F1 /* HHUIImageNamedTests */ = {
@@ -216,6 +301,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Hyuk Hur";
 				TargetAttributes = {
+					4D875D6B200D040600654A55 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					4DB5C5EC19D17453001D31F1 = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -238,13 +327,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DB5C5EC19D17453001D31F1 /* HHUIImageNamed */,
+				4DB5C5EC19D17453001D31F1 /* HHUIImageNamed_Example */,
 				4DB5C60519D17453001D31F1 /* HHUIImageNamedTests */,
+				4D875D6B200D040600654A55 /* HHUIImageNamed */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4D875D6A200D040600654A55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4DB5C5EB19D17453001D31F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,14 +368,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4D875D67200D040600654A55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D875D7E200D04EA00654A55 /* UIImageView+HHFileNamedImage.m in Sources */,
+				4D875D7A200D04EA00654A55 /* CIImage+HHFileNamedImage.m in Sources */,
+				4D875D80200D04EA00654A55 /* NSData+HHFileNamedImage.m in Sources */,
+				4D875D7C200D04EA00654A55 /* UIImage+HHFileNamedImage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4DB5C5E919D17453001D31F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE873CB19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m in Sources */,
 				4DB5C5F919D17453001D31F1 /* ViewController.m in Sources */,
 				4DB5C5F619D17453001D31F1 /* AppDelegate.m in Sources */,
-				4DB5C62019D25D6B001D31F1 /* UIImage+HHFileNamedImage.m in Sources */,
 				4DB5C5F319D17453001D31F1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,18 +393,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDBAB791A0D976200E4D26F /* NSData+HHFileNamedImage.m in Sources */,
 				4DB5C60D19D17453001D31F1 /* HHUIImageNamedTests.m in Sources */,
-				4DDBAB731A0D11FC00E4D26F /* CIImage+HHFileNamedImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4D875D72200D040600654A55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D875D6B200D040600654A55 /* HHUIImageNamed */;
+			targetProxy = 4D875D71200D040600654A55 /* PBXContainerItemProxy */;
+		};
 		4DB5C60819D17453001D31F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4DB5C5EC19D17453001D31F1 /* HHUIImageNamed */;
+			target = 4DB5C5EC19D17453001D31F1 /* HHUIImageNamed_Example */;
 			targetProxy = 4DB5C60719D17453001D31F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -323,6 +432,67 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4D875D76200D040600654A55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = HHUIImageNamed/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyukhur.HHUIImageNamed;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4D875D77200D040600654A55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = HHUIImageNamed/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyukhur.HHUIImageNamed;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		4DB5C60E19D17453001D31F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -424,9 +594,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = HHUIImageNamed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hyukhur.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyukhur.HHUIImageNamed.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -435,9 +606,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = HHUIImageNamed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hyukhur.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyukhur.HHUIImageNamed.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -458,7 +630,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyukhur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHUIImageNamed.app/HHUIImageNamed";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHUIImageNamed_Example.app/HHUIImageNamed_Example";
 			};
 			name = Debug;
 		};
@@ -474,13 +646,22 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyukhur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHUIImageNamed.app/HHUIImageNamed";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHUIImageNamed_Example.app/HHUIImageNamed_Example";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4D875D75200D040600654A55 /* Build configuration list for PBXNativeTarget "HHUIImageNamed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D875D76200D040600654A55 /* Debug */,
+				4D875D77200D040600654A55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4DB5C5E819D17453001D31F1 /* Build configuration list for PBXProject "HHUIImageNamed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -490,7 +671,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DB5C61019D17453001D31F1 /* Build configuration list for PBXNativeTarget "HHUIImageNamed" */ = {
+		4DB5C61019D17453001D31F1 /* Build configuration list for PBXNativeTarget "HHUIImageNamed_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DB5C61119D17453001D31F1 /* Debug */,
