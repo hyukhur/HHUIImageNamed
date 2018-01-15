@@ -6,7 +6,7 @@
 //  Copyright (c) 2014년 Hyuk Hur. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 OBJC_EXTERN NSString *HHUIImageNamedCandidatedFileName;
 

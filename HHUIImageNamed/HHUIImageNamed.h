@@ -6,7 +6,7 @@
 //  Copyright © 2018 Hyuk Hur. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 //! Project version number for HHUIImageNamed.
 FOUNDATION_EXPORT double HHUIImageNamedVersionNumber;

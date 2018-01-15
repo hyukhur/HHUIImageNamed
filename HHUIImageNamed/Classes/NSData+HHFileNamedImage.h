@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Hyuk Hur. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface NSData (HHFileNamedImage)
 

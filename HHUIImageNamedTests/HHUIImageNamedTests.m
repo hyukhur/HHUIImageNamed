@@ -6,9 +6,9 @@
 //  Copyright (c) 2014년 Hyuk Hur. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>
-#import "UIImage+HHFileNamedImage.h"
+@import UIKit;
+@import XCTest;
+@import HHUIImageNamed;
 
 @interface UIImage ()
 - (NSString *)fileName_hh;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Hyuk Hur. All rights reserved.
 //
 
-#import <CoreImage/CoreImage.h>
+@import CoreImage;
 
 @interface CIImage (HHFileNamedImage)
 
