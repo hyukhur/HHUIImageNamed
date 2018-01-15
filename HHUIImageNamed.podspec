@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HHUIImageNamed"
-  s.version      = "0.2.0"
+  s.version      = "0.3.0"
   s.summary      = "UIImage with name by `imageNamed`"
 
   s.description  = <<-DESC
