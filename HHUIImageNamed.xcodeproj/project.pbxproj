@@ -68,7 +68,7 @@
 		4D875D6C200D040600654A55 /* HHUIImageNamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHUIImageNamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D875D6E200D040600654A55 /* HHUIImageNamed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHUIImageNamed.h; sourceTree = "<group>"; };
 		4D875D6F200D040600654A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DB5C5ED19D17453001D31F1 /* HHUIImageNamed_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHUIImageNamed_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DB5C5ED19D17453001D31F1 /* HHUIImageNamedExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHUIImageNamedExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB5C5F119D17453001D31F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DB5C5F219D17453001D31F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4DB5C5F419D17453001D31F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		4DB5C5EE19D17453001D31F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DB5C5ED19D17453001D31F1 /* HHUIImageNamed_Example.app */,
+				4DB5C5ED19D17453001D31F1 /* HHUIImageNamedExample.app */,
 				4DB5C60619D17453001D31F1 /* HHUIImageNamedTests.xctest */,
 				4D875D6C200D040600654A55 /* HHUIImageNamed.framework */,
 			);
@@ -255,9 +255,9 @@
 			productReference = 4D875D6C200D040600654A55 /* HHUIImageNamed.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4DB5C5EC19D17453001D31F1 /* HHUIImageNamed_Example */ = {
+		4DB5C5EC19D17453001D31F1 /* HHUIImageNamedExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DB5C61019D17453001D31F1 /* Build configuration list for PBXNativeTarget "HHUIImageNamed_Example" */;
+			buildConfigurationList = 4DB5C61019D17453001D31F1 /* Build configuration list for PBXNativeTarget "HHUIImageNamedExample" */;
 			buildPhases = (
 				4DB5C5E919D17453001D31F1 /* Sources */,
 				4DB5C5EA19D17453001D31F1 /* Frameworks */,
@@ -269,9 +269,9 @@
 			dependencies = (
 				4D875D72200D040600654A55 /* PBXTargetDependency */,
 			);
-			name = HHUIImageNamed_Example;
+			name = HHUIImageNamedExample;
 			productName = HHUIImageNamed;
-			productReference = 4DB5C5ED19D17453001D31F1 /* HHUIImageNamed_Example.app */;
+			productReference = 4DB5C5ED19D17453001D31F1 /* HHUIImageNamedExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4DB5C60519D17453001D31F1 /* HHUIImageNamedTests */ = {
@@ -327,7 +327,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DB5C5EC19D17453001D31F1 /* HHUIImageNamed_Example */,
+				4DB5C5EC19D17453001D31F1 /* HHUIImageNamedExample */,
 				4DB5C60519D17453001D31F1 /* HHUIImageNamedTests */,
 				4D875D6B200D040600654A55 /* HHUIImageNamed */,
 			);
@@ -407,7 +407,7 @@
 		};
 		4DB5C60819D17453001D31F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4DB5C5EC19D17453001D31F1 /* HHUIImageNamed_Example */;
+			target = 4DB5C5EC19D17453001D31F1 /* HHUIImageNamedExample */;
 			targetProxy = 4DB5C60719D17453001D31F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -630,7 +630,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyukhur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHUIImageNamed_Example.app/HHUIImageNamed_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHUIImageNamedExample.app/HHUIImageNamedExample";
 			};
 			name = Debug;
 		};
@@ -646,7 +646,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyukhur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHUIImageNamed_Example.app/HHUIImageNamed_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHUIImageNamedExample.app/HHUIImageNamedExample";
 			};
 			name = Release;
 		};
@@ -671,7 +671,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DB5C61019D17453001D31F1 /* Build configuration list for PBXNativeTarget "HHUIImageNamed_Example" */ = {
+		4DB5C61019D17453001D31F1 /* Build configuration list for PBXNativeTarget "HHUIImageNamedExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DB5C61119D17453001D31F1 /* Debug */,
