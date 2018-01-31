@@ -23,6 +23,7 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
 - (void)setFileName_hh:(NSString *)fileName_hh
 {
     objc_setAssociatedObject(self, @selector(fileName_hh), fileName_hh, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
 }
 
 - (NSString *)description_hh
@@ -119,7 +120,6 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
         NSString *fileName = [[[NSThread currentThread] threadDictionary] objectForKey:HHUIImageNamedCandidatedFileName];
         if (fileName) {
             [self setFileName_hh:fileName];
-            [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
         }
     }
     return self;
@@ -132,7 +132,6 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
         NSString *fileName = [[[NSThread currentThread] threadDictionary] objectForKey:HHUIImageNamedCandidatedFileName];
         if (fileName) {
             [self setFileName_hh:fileName];
-            [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
         }
     }
     return self;
@@ -145,7 +144,6 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
         NSString *fileName = [[[NSThread currentThread] threadDictionary] objectForKey:HHUIImageNamedCandidatedFileName];
         if (fileName) {
             [self setFileName_hh:fileName];
-            [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
         }
     }
     return self;
@@ -261,7 +259,6 @@ NSString *HHUIImageNibPlaceholderUIResourceName = @"UIResourceName";
         NSString *imageName = [aDecoder decodeObjectForKey:HHUIImageNibPlaceholderUIResourceName];
         if ([imageName isKindOfClass:[NSString class]]) {
             [self setFileName_hh:imageName];
-            [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
         }
     }
     return self;
