@@ -244,3 +244,36 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
 }
 
 @end
+
+
+
+@interface UIImageNibPlaceholder : UIImage <NSCoding>
+@end
+
+NSString *HHUIImageNibPlaceholderUIResourceName = @"UIResourceName";
+
+@implementation UIImageNibPlaceholder (HHFileNamedImage)
+
+- (instancetype)initWithCoder_hh:(NSCoder *)aDecoder
+{
+    self = [self initWithCoder_hh:aDecoder];
+    if (self) {
+        NSString *imageName = [aDecoder decodeObjectForKey:HHUIImageNibPlaceholderUIResourceName];
+        if ([imageName isKindOfClass:[NSString class]]) {
+            [self setFileName_hh:imageName];
+            [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
+        }
+    }
+    return self;
+}
+
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        {
+            method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithCoder:)), class_getInstanceMethod(self, @selector(initWithCoder_hh:)));
+        }
+    });
+}
+@end
