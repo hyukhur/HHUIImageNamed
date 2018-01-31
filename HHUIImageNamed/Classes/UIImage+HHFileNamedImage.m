@@ -11,6 +11,11 @@
 
 NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName";
 
+@interface CIImage (HHFileNamedImage)
+- (NSString *)fileName_hh;
+- (void)setFileName_hh:(NSString *)fileName_hh;
+@end
+
 @implementation UIImage (HHFileNamedImage)
 
 #pragma mark -
@@ -95,10 +100,11 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
 
 - (CIImage *)CIImage_hh
 {
+    CIImage *image = [self CIImage_hh];
     if ([self fileName_hh]) {
-        [[[NSThread currentThread] threadDictionary] setObject:[self fileName_hh] forKey:HHUIImageNamedCandidatedFileName];
+        [image setFileName_hh:[self fileName_hh]];
     }
-    return [self CIImage_hh];
+    return image;
 }
 
 /*
@@ -141,9 +147,14 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
 {
     self = [self initWithCIImage_hh:ciImage scale:scale orientation:orientation];
     if (self) {
-        NSString *fileName = [[[NSThread currentThread] threadDictionary] objectForKey:HHUIImageNamedCandidatedFileName];
+        NSString *fileName = [ciImage fileName_hh];
         if (fileName) {
             [self setFileName_hh:fileName];
+        } else {
+            fileName = [[[NSThread currentThread] threadDictionary] objectForKey:HHUIImageNamedCandidatedFileName];
+            if (fileName) {
+                [self setFileName_hh:fileName];
+            }
         }
     }
     return self;
@@ -242,8 +253,6 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
 }
 
 @end
-
-
 
 @interface UIImageNibPlaceholder : UIImage <NSCoding>
 @end

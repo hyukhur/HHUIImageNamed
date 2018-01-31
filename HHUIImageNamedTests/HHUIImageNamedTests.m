@@ -157,12 +157,23 @@
     CIImage *ciImage = [CIImage imageWithContentsOfURL:fileURL];
     UIImage *image = [UIImage imageWithCIImage:ciImage scale:1.0 orientation:(UIImageOrientationUp)];
     XCTAssertTrue([[image description] containsString:@"img1.png"]);
+    XCTAssertTrue([[ciImage description] containsString:@"img1.png"]);
 }
 
-- (void)testFailCIImageFromUIImageWithScaleAndOrientation {
+- (void)testFailMakingCIImageFromUIImageWithoutCIImage {
     CIImage *ciImage = [[UIImage imageNamed:@"img1.png"] CIImage];
     UIImage *image = [UIImage imageWithCIImage:ciImage scale:1.0 orientation:(UIImageOrientationUp)];
+    XCTAssertNil(ciImage);
     XCTAssertNil(image);
+}
+
+- (void)testCIImageFromUIImageWithCIImage {
+    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"img1" withExtension:@"png"];
+    CIImage *ciImage = [CIImage imageWithContentsOfURL:fileURL];
+    UIImage *image = [UIImage imageWithCIImage:ciImage scale:1.0 orientation:(UIImageOrientationUp)];
+    CIImage *ciImage2 = [image CIImage];
+    XCTAssertNotNil(ciImage2);
+    XCTAssertTrue([[ciImage2 description] containsString:@"img1.png"]);
 }
 
 - (void)testTrackingFileNameFromDraw {
