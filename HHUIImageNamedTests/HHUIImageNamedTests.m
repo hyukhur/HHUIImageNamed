@@ -182,15 +182,15 @@
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [[UIColor redColor] CGColor]);
+
+    CGContextDrawImage(context, rect, image.CGImage);
+    CGContextSetFillColorWithColor(context, [[[UIColor redColor] colorWithAlphaComponent:0.5] CGColor]);
     CGContextFillRect(context, rect);
     
     image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    XCTAssertFalse([[image description] containsString:@"img1.png"]);
-    XCTAssertFalse([[image description] containsString:@"HHUIImageNamedTests"]);
+    XCTAssertTrue([[image description] containsString:@"img1.png"]);
 }
 
 - (void)testXcodeAssets {
