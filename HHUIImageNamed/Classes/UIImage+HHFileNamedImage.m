@@ -15,6 +15,24 @@ const NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFil
 @property(nonatomic, strong) NSString *fileName_hh;
 @end
 
+@interface UIImage (HHFileNamedImage_Private)
+@property(nonatomic, strong) NSString *fileName_hh;
+@end
+
+NSString *HHUIImageNibPlaceholderUIResourceName = @"UIResourceName";
+static UIImage *(*UIImageNibPlaceholder_initWithCoder)(id, SEL, NSCoder*) = NULL;
+static UIImage *UIImageNibPlaceholder_initWithCoder_hh(id self, SEL _cmd, NSCoder *aDecoder)
+{
+    UIImage *result = (*UIImageNibPlaceholder_initWithCoder)(self, _cmd, aDecoder);
+    if (result) {
+        NSString *imageName = [aDecoder decodeObjectForKey:HHUIImageNibPlaceholderUIResourceName];
+        if ([imageName isKindOfClass:[NSString class]]) {
+            [result setFileName_hh:imageName];
+        }
+    }
+    return result;
+}
+
 @implementation UIImage (HHFileNamedImage)
 
 #pragma mark -
@@ -283,36 +301,7 @@ const NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFil
             method_exchangeImplementations(class_getClassMethod(self, @selector(imageNamed:)), class_getClassMethod(self, @selector(imageNamed_hh:)));
         }
     });
+    UIImageNibPlaceholder_initWithCoder = (UIImage*(*)(id, SEL, NSKeyedUnarchiver*))class_replaceMethod(NSClassFromString(@"UIImageNibPlaceholder"), @selector(initWithCoder:), (IMP)UIImageNibPlaceholder_initWithCoder_hh, "@@:@");
 }
 
-@end
-
-@interface UIImageNibPlaceholder : UIImage <NSCoding>
-@end
-
-NSString *HHUIImageNibPlaceholderUIResourceName = @"UIResourceName";
-
-@implementation UIImageNibPlaceholder (HHFileNamedImage)
-
-- (instancetype)initWithCoder_hh:(NSCoder *)aDecoder
-{
-    self = [self initWithCoder_hh:aDecoder];
-    if (self) {
-        NSString *imageName = [aDecoder decodeObjectForKey:HHUIImageNibPlaceholderUIResourceName];
-        if ([imageName isKindOfClass:[NSString class]]) {
-            [self setFileName_hh:imageName];
-        }
-    }
-    return self;
-}
-
-+ (void)load
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        {
-            method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithCoder:)), class_getInstanceMethod(self, @selector(initWithCoder_hh:)));
-        }
-    });
-}
 @end
