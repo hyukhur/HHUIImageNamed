@@ -66,7 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4D427B6B2022BB760018369C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "HHUIImageNamed/Default-568h@2x.png"; sourceTree = "<group>"; };
+		4D427B6B2022BB760018369C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4D875D6C200D040600654A55 /* HHUIImageNamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHUIImageNamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D875D6E200D040600654A55 /* HHUIImageNamed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHUIImageNamed.h; sourceTree = "<group>"; };
 		4D875D6F200D040600654A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,7 +136,6 @@
 		4DB5C5E419D17453001D31F1 = {
 			isa = PBXGroup;
 			children = (
-				4D427B6B2022BB760018369C /* Default-568h@2x.png */,
 				4DB5C62819D2AAB7001D31F1 /* HHUIImageNamed.podspec */,
 				4DB5C5EF19D17453001D31F1 /* HHUIImageNamed */,
 				4DB5C60919D17453001D31F1 /* HHUIImageNamedTests */,
@@ -159,6 +158,7 @@
 		4DB5C5EF19D17453001D31F1 /* HHUIImageNamed */ = {
 			isa = PBXGroup;
 			children = (
+				4D427B6B2022BB760018369C /* Default-568h@2x.png */,
 				4DB5C5F419D17453001D31F1 /* AppDelegate.h */,
 				4DB5C5F519D17453001D31F1 /* AppDelegate.m */,
 				4DB5C5F719D17453001D31F1 /* ViewController.h */,
