@@ -8,6 +8,7 @@ HHUIImageNamed is drop-in style debugging tool to track image's file name when w
 [![Platform](https://cocoapod-badges.herokuapp.com/p/HHUIImageNamed/badge.png)](https://github.com/hyukhur/HHUIImageNamed/tree/master/HHUIImageNamed/Classes)
 -->
 [![Objective-C](https://img.shields.io/badge/Objective-C-green.svg?style=flat-square)](https://developer.apple.com)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](http://img.shields.io/cocoapods/p/HHUIImageNamed.svg?style=flat-square)](http://cocoapods.org/pods/HHUIImageNamed)
 [![GitHub license](https://img.shields.io/github/license/hyukhur/HHUIImageNamed.svg?style=flat-square)](https://github.com/hyukhur/HHUIImageNamed/blob/master/LICENSE)
 [![Download](https://img.shields.io/cocoapods/dt/HHUIImageNamed.svg?style=flat-square)](http://cocoapods.org/pods/HHUIImageNamed)
@@ -34,7 +35,6 @@ pod 'HHUIImageNamed'
 ```ruby
 github "hyukhur/HHUIImageNamed"
 ```
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Author
 
