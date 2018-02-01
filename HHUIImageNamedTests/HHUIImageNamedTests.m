@@ -62,8 +62,15 @@
 
 - (void)testPerformanceExample {
     [self measureBlock:^{
-        __unused UIImage *imageNamed = [UIImage imageNamed:@"img1.png"];
-        __unused UIImage *imageFiled = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"img1.png"]];
+        UIImage *imageNamed = [UIImage imageNamed:@"img1.png"];
+        XCTAssertTrue([[imageNamed description] hasPrefix:@"img1.png"]);
+    }];
+}
+
+- (void)testPerformanceFromFile {
+    [self measureBlock:^{
+        UIImage *imageFiled = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"img1.png"]];
+        XCTAssertTrue([[imageFiled description] hasPrefix:@"img1.png"]);
     }];
 }
 
