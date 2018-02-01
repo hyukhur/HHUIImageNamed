@@ -8,7 +8,6 @@
 
 #import "CIImage+HHFileNamedImage.h"
 #import <objc/runtime.h>
-#import "UIImage+HHFileNamedImage.h"
 
 NSString *HHCIImageNamedCandidatedFileName = @"HHCIImageNamedCandidatedFileName";
 
@@ -22,7 +21,6 @@ NSString *HHCIImageNamedCandidatedFileName = @"HHCIImageNamedCandidatedFileName"
 - (void)setFileName_hh:(NSString *)fileName_hh
 {
     objc_setAssociatedObject(self, @selector(fileName_hh), fileName_hh, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
 }
 
 - (NSString *)description_hh
