@@ -9,11 +9,10 @@
 #import "UIImage+HHFileNamedImage.h"
 #import <objc/runtime.h>
 
-NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName";
+const NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName";
 
 @interface CIImage (HHFileNamedImage)
-- (NSString *)fileName_hh;
-- (void)setFileName_hh:(NSString *)fileName_hh;
+@property(nonatomic, strong) NSString *fileName_hh;
 @end
 
 @implementation UIImage (HHFileNamedImage)
@@ -22,7 +21,7 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
 
 - (NSString *)fileName_hh
 {
-    return objc_getAssociatedObject(self, _cmd);
+    return [objc_getAssociatedObject(self, _cmd) description];
 }
 
 - (void)setFileName_hh:(NSString *)fileName_hh
