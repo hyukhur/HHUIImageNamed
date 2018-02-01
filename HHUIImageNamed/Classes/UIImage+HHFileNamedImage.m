@@ -27,8 +27,19 @@ const NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFil
 - (void)setFileName_hh:(NSString *)fileName_hh
 {
     objc_setAssociatedObject(self, @selector(isGuessing_hh), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(fileNameCache_hh), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, @selector(fileName_hh), fileName_hh, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
+}
+
+- (NSString *)fileNameCache_hh
+{
+    return [objc_getAssociatedObject(self, _cmd) description];
+}
+
+- (void)setFileNameCache_hh:(NSString *)fileNameCache_hh
+{
+    objc_setAssociatedObject(self, @selector(fileNameCache_hh), fileNameCache_hh, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (BOOL)isGuessing_hh
@@ -43,6 +54,12 @@ const NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFil
 
 - (NSString *)description_hh
 {
+    if ([self respondsToSelector:@selector(fileNameCache_hh)]) {
+        NSString *cache = [self fileNameCache_hh];
+        if (cache) {
+            return cache;
+        }
+    }
     if (![self respondsToSelector:@selector(fileName_hh)]) {
         return [self description_hh];
     }
@@ -51,7 +68,9 @@ const NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFil
         return [self description_hh];
     }
     BOOL isGuessing = [self isGuessing_hh];
-    return [NSString stringWithFormat:@"%@%@, %@", isGuessing ? @"Guessing - " : @"", fileName, [self description_hh]];
+    NSString *result = [NSString stringWithFormat:@"%@%@, %@", isGuessing ? @"Guessing - " : @"", fileName, [self description_hh]];
+    [self setFileNameCache_hh:result];
+    return result;
 }
 
 #pragma mark - 

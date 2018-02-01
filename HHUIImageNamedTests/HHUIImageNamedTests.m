@@ -11,8 +11,9 @@
 @import HHUIImageNamed;
 
 @interface UIImage ()
-- (NSString *)fileName_hh;
-- (BOOL)isGuessing_hh;
+@property(readonly) NSString *fileName_hh;
+@property NSString *fileNameCache_hh;
+@property(readonly) BOOL isGuessing_hh;
 @end
 
 @interface HHUIImageNamedTests : XCTestCase
@@ -216,6 +217,22 @@
     UIViewController *vc = [sb instantiateInitialViewController];
     UIImageView *imageView = (UIImageView *)[[vc.view subviews] firstObject];
     XCTAssertTrue([[imageView description] hasPrefix:@"img1.png"]);
+}
+
+- (void)testCaching {
+    UIImage *image = [UIImage imageNamed:@"img1"];
+    XCTAssertNil([image fileNameCache_hh]);
+    XCTAssertTrue([[image description] hasPrefix:@"img1"]);
+    XCTAssertTrue([[image fileNameCache_hh] hasPrefix:@"img1"]);
+    [image setFileNameCache_hh:nil];
+    XCTAssertNil([image fileNameCache_hh]);
+    XCTAssertTrue([[image description] hasPrefix:@"img1"]);
+    XCTAssertTrue([[image fileNameCache_hh] hasPrefix:@"img1"]);
+
+    [image performSelector:@selector(setFileName_hh:) withObject:@"img2"];
+    XCTAssertNil([image fileNameCache_hh]);
+    XCTAssertTrue([[image description] hasPrefix:@"img2"]);
+    XCTAssertTrue([[image fileNameCache_hh] hasPrefix:@"img2"]);
 }
 
 @end
