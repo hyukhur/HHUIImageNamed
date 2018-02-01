@@ -27,8 +27,19 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
 
 - (void)setFileName_hh:(NSString *)fileName_hh
 {
+    objc_setAssociatedObject(self, @selector(isGuessing_hh), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, @selector(fileName_hh), fileName_hh, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [[[NSThread currentThread] threadDictionary] removeObjectForKey:HHUIImageNamedCandidatedFileName];
+}
+
+- (BOOL)isGuessing_hh
+{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setIsGuessing_hh:(BOOL)isGuessing
+{
+    objc_setAssociatedObject(self, @selector(isGuessing_hh), @(isGuessing), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSString *)description_hh
@@ -40,7 +51,8 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
     if (!fileName) {
         return [self description_hh];
     }
-    return [NSString stringWithFormat:@"%@, %@", fileName, [self description_hh]];
+    BOOL isGuessing = [self isGuessing_hh];
+    return [NSString stringWithFormat:@"%@%@, %@", isGuessing ? @"Guessing - " : @"", fileName, [self description_hh]];
 }
 
 #pragma mark - 
@@ -126,6 +138,7 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
         NSString *fileName = [[[NSThread currentThread] threadDictionary] objectForKey:HHUIImageNamedCandidatedFileName];
         if (fileName) {
             [self setFileName_hh:fileName];
+            [self setIsGuessing_hh:YES];
         }
     }
     return self;
@@ -138,6 +151,7 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
         NSString *fileName = [[[NSThread currentThread] threadDictionary] objectForKey:HHUIImageNamedCandidatedFileName];
         if (fileName) {
             [self setFileName_hh:fileName];
+            [self setIsGuessing_hh:YES];
         }
     }
     return self;
@@ -154,6 +168,7 @@ NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName"
             fileName = [[[NSThread currentThread] threadDictionary] objectForKey:HHUIImageNamedCandidatedFileName];
             if (fileName) {
                 [self setFileName_hh:fileName];
+                [self setIsGuessing_hh:YES];
             }
         }
     }
