@@ -1,4 +1,11 @@
 language: objective-c
 #osx_image: xcode9.2
-xcode_project: HHUIImageNamed.xcodeproj
-xcode_scheme: 'HHUIImageNamedExample'
+#xcode_project: HHUIImageNamed.xcodeproj
+#xcode_scheme: 'HHUIImageNamedTests'
+notifications:
+  email: false
+script:
+   - xcodebuild -sdk iphonesimulator -project HHUIImageNamed.xcodeproj -scheme HHUIImageNamedTests CODE_SIGNING_REQUIRED=NO clean build
+   - xctool -project HHUIImageNamed.xcodeproj -scheme HHUIImageNamedTests run-tests -test-sdk iphonesimulator
+
+
