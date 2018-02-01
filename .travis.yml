@@ -5,6 +5,7 @@ language: objective-c
 notifications:
   email: false
 script:
-   - xcodebuild -sdk iphonesimulator -project HHUIImageNamed.xcodeproj -scheme HHUIImageNamedTests CODE_SIGNING_REQUIRED=NO clean build
-   - xctool -project HHUIImageNamed.xcodeproj -scheme HHUIImageNamedTests run-tests -test-sdk iphonesimulator
-
+  - xcodebuild -sdk iphonesimulator -project HHUIImageNamed.xcodeproj -scheme HHUIImageNamedTests CODE_SIGNING_REQUIRED=NO clean build
+  - xctool -project HHUIImageNamed.xcodeproj -scheme HHUIImageNamedTests run-tests -test-sdk iphonesimulator
+after_success:
+  - ./coveralls.rb --extension m -e HHUIImageNamed -e HHUIImageNamedTests
