@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D427B6C2022BB760018369C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D427B6B2022BB760018369C /* Default-568h@2x.png */; };
 		4D875D66200D00B700654A55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C5FD19D17453001D31F1 /* Images.xcassets */; };
 		4D875D70200D040600654A55 /* HHUIImageNamed.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D875D6E200D040600654A55 /* HHUIImageNamed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D875D73200D040600654A55 /* HHUIImageNamed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D875D6C200D040600654A55 /* HHUIImageNamed.framework */; };
@@ -65,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D427B6B2022BB760018369C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4D875D6C200D040600654A55 /* HHUIImageNamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHUIImageNamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D875D6E200D040600654A55 /* HHUIImageNamed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHUIImageNamed.h; sourceTree = "<group>"; };
 		4D875D6F200D040600654A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		4DB5C5E419D17453001D31F1 = {
 			isa = PBXGroup;
 			children = (
+				4D427B6B2022BB760018369C /* Default-568h@2x.png */,
 				4DB5C62819D2AAB7001D31F1 /* HHUIImageNamed.podspec */,
 				4DB5C5EF19D17453001D31F1 /* HHUIImageNamed */,
 				4DB5C60919D17453001D31F1 /* HHUIImageNamedTests */,
@@ -351,6 +354,7 @@
 				4DB5C60119D17453001D31F1 /* LaunchScreen.xib in Resources */,
 				4D875D66200D00B700654A55 /* Images.xcassets in Resources */,
 				4DB5C62619D260CF001D31F1 /* img1.png in Resources */,
+				4D427B6C2022BB760018369C /* Default-568h@2x.png in Resources */,
 				4DDBAB701A0D0B1D00E4D26F /* img3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,10 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -638,10 +639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = HHUIImageNamedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyukhur.$(PRODUCT_NAME:rfc1034identifier)";

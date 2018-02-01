@@ -229,7 +229,10 @@
     XCTAssertTrue([[image description] hasPrefix:@"img1"]);
     XCTAssertTrue([[image fileNameCache_hh] hasPrefix:@"img1"]);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
     [image performSelector:@selector(setFileName_hh:) withObject:@"img2"];
+#pragma clang diagnostic pop
     XCTAssertNil([image fileNameCache_hh]);
     XCTAssertTrue([[image description] hasPrefix:@"img2"]);
     XCTAssertTrue([[image fileNameCache_hh] hasPrefix:@"img2"]);
