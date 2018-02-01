@@ -4,8 +4,10 @@ language: objective-c
 #xcode_scheme: 'HHUIImageNamedTests'
 notifications:
   email: false
+before_success:
+  - bundle install
 script:
   - xcodebuild -sdk iphonesimulator -project HHUIImageNamed.xcodeproj -scheme HHUIImageNamedTests CODE_SIGNING_REQUIRED=NO clean build
   - xctool -project HHUIImageNamed.xcodeproj -scheme HHUIImageNamedTests run-tests -test-sdk iphonesimulator
 after_success:
-  - ./coveralls.rb --extension m -e HHUIImageNamed -e HHUIImageNamedTests
+  - bundle exec coveralls-gcov # --repo-token REPO_TOKEN --no-gcov
