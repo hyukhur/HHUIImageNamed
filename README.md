@@ -9,7 +9,7 @@ HHUIImageNamed is drop-in style debugging tool to track image's file name when w
 -->
 [![Objective-C](https://img.shields.io/badge/Objective-C-green.svg?style=flat-square)](https://developer.apple.com)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods](http://img.shields.io/cocoapods/p/HHUIImageNamed.svg?style=flat-square)](http://cocoapods.org/pods/HHUIImageNamed)
+[![CocoaPods](https://img.shields.io/cocoapods/p/HHUIImageNamed.svg?style=flat-square)](https://github.com/hyukhur/HHUIImageNamed)
 [![GitHub license](https://img.shields.io/github/license/hyukhur/HHUIImageNamed.svg?style=flat-square)](https://github.com/hyukhur/HHUIImageNamed/blob/master/LICENSE)
 [![Download](https://img.shields.io/cocoapods/dt/HHUIImageNamed.svg?style=flat-square)](http://cocoapods.org/pods/HHUIImageNamed)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/hyukhur/HHUIImageNamed.svg?style=social&style=flat-square)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fhyukhur%2FHHUIImageNamed)
