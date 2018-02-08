@@ -4,6 +4,7 @@ HHUIImageNamed is drop-in style debugging tool to track image's file name when w
 
 [![Build Status](https://travis-ci.org/hyukhur/HHUIImageNamed.svg?branch=master)](https://travis-ci.org/hyukhur/HHUIImageNamed)
 [![codecov](https://codecov.io/gh/hyukhur/HHUIImageNamed/branch/master/graph/badge.svg)](https://github.com/hyukhur/HHUIImageNamed)
+[![codebeat badge](https://codebeat.co/badges/2fee3b88-f5d7-4e20-a454-ec5bc9520c09)](https://codebeat.co/projects/github-com-hyukhur-hhuiimagenamed-master)
 <!--
 [![Platform](https://cocoapod-badges.herokuapp.com/p/HHUIImageNamed/badge.png)](https://github.com/hyukhur/HHUIImageNamed/tree/master/HHUIImageNamed/Classes)
 -->
