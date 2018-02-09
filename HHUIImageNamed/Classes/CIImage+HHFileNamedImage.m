@@ -8,8 +8,7 @@
 
 #import "CIImage+HHFileNamedImage.h"
 #import <objc/runtime.h>
-
-NSString *HHCIImageNamedCandidatedFileName = @"HHCIImageNamedCandidatedFileName";
+#import "PrivateAPI.h"
 
 @implementation CIImage (HHFileNamedImage)
 
@@ -52,22 +51,8 @@ NSString *HHCIImageNamedCandidatedFileName = @"HHCIImageNamedCandidatedFileName"
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        SwizzleDescriptionMethodForClass([self class]);
         {
-            Class class = [self class];
-            SEL originalSelector = @selector(description);
-            SEL swizzledSelector = @selector(description_hh);
-            {
-                Method originalMethod = class_getInstanceMethod(class, originalSelector);
-                Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-
-                BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-
-                if (didAddMethod) {
-                    class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-                } else {
-                    method_exchangeImplementations(originalMethod, swizzledMethod);
-                }
-            }
             method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithContentsOfURL:options:)), class_getInstanceMethod(self, @selector(initWithContentsOfURL_hh:options:)));
         }
     });

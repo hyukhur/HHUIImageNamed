@@ -8,33 +8,9 @@
 
 #import "UIImage+HHFileNamedImage.h"
 #import <objc/runtime.h>
-
-const NSString *HHUIImageNamedCandidatedFileName = @"HHUIImageNamedCandidatedFileName";
-
-@interface CIImage (HHFileNamedImage)
-@property(nonatomic, strong) NSString *fileName_hh;
-@end
-
-@interface UIImage (HHFileNamedImage_Private)
-@property(nonatomic, strong) NSString *fileName_hh;
-@end
-
-NSString *HHUIImageNibPlaceholderUIResourceName = @"UIResourceName";
-static UIImage *(*UIImageNibPlaceholder_initWithCoder)(id, SEL, NSCoder*) = NULL;
-static UIImage *UIImageNibPlaceholder_initWithCoder_hh(id self, SEL _cmd, NSCoder *aDecoder)
-{
-    UIImage *result = (*UIImageNibPlaceholder_initWithCoder)(self, _cmd, aDecoder);
-    if (result) {
-        NSString *imageName = [aDecoder decodeObjectForKey:HHUIImageNibPlaceholderUIResourceName];
-        if ([imageName isKindOfClass:[NSString class]]) {
-            [result setFileName_hh:imageName];
-        }
-    }
-    return result;
-}
+#import "PrivateAPI.h"
 
 @implementation UIImage (HHFileNamedImage)
-
 #pragma mark -
 
 - (NSString *)fileName_hh
@@ -262,21 +238,7 @@ static UIImage *UIImageNibPlaceholder_initWithCoder_hh(id self, SEL _cmd, NSCode
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        SEL originalSelector = @selector(description);
-        SEL swizzledSelector = @selector(description_hh);
-        {
-            Method originalMethod = class_getInstanceMethod(class, originalSelector);
-            Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-            
-            BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-            
-            if (didAddMethod) {
-                class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-            } else {
-                method_exchangeImplementations(originalMethod, swizzledMethod);
-            }
-        }
+        SwizzleDescriptionMethodForClass([self class]);
         {
             method_exchangeImplementations(class_getInstanceMethod(self, @selector(resizableImageWithCapInsets:)), class_getInstanceMethod(self, @selector(resizableImageWithCapInsets_hh:)));
             method_exchangeImplementations(class_getInstanceMethod(self, @selector(resizableImageWithCapInsets:resizingMode:)), class_getInstanceMethod(self, @selector(resizableImageWithCapInsets_hh:resizingMode:)));
@@ -301,7 +263,6 @@ static UIImage *UIImageNibPlaceholder_initWithCoder_hh(id self, SEL _cmd, NSCode
             method_exchangeImplementations(class_getClassMethod(self, @selector(imageNamed:)), class_getClassMethod(self, @selector(imageNamed_hh:)));
         }
     });
-    UIImageNibPlaceholder_initWithCoder = (UIImage*(*)(id, SEL, NSKeyedUnarchiver*))class_replaceMethod(NSClassFromString(@"UIImageNibPlaceholder"), @selector(initWithCoder:), (IMP)UIImageNibPlaceholder_initWithCoder_hh, "@@:@");
 }
 
 @end

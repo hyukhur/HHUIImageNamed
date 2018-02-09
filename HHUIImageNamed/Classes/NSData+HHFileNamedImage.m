@@ -8,7 +8,7 @@
 
 #import "NSData+HHFileNamedImage.h"
 #import <objc/runtime.h>
-#import "UIImage+HHFileNamedImage.h"
+#import "PrivateAPI.h"
 
 @implementation NSData (HHFileNamedImage)
 

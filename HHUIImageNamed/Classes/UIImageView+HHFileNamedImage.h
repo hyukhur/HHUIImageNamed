@@ -7,7 +7,3 @@
 //
 
 @import UIKit;
-
-@interface UIImageView (HHFileNamedImage)
-
-@end

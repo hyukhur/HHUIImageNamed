@@ -16,4 +16,11 @@ FOUNDATION_EXPORT const unsigned char HHUIImageNamedVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <HHUIImageNamed/PublicHeader.h>
 
-
+#ifndef USE_PRIVATE
+    #ifdef DEBUG
+        #define USE_PRIVATE 1
+    #else
+        #define USE_PRIVATE 0
+    #eneif
+#endif
+#endif

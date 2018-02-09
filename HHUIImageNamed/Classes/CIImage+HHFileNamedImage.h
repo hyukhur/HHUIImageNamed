@@ -7,9 +7,3 @@
 //
 
 @import CoreImage;
-
-OBJC_EXTERN NSString *HHCIImageNamedCandidatedFileName;
-
-@interface CIImage (HHFileNamedImage)
-
-@end

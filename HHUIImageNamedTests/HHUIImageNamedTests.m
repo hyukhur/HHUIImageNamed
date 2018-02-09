@@ -226,7 +226,7 @@
     XCTAssertTrue([[imageView description] hasPrefix:@"img1.png"]);
 }
 
-- (void)testCaching {
+- (void)testCache {
     UIImage *image = [UIImage imageNamed:@"img1"];
     XCTAssertNil([image fileNameCache_hh]);
     XCTAssertTrue([[image description] hasPrefix:@"img1"]);
@@ -243,6 +243,16 @@
     XCTAssertNil([image fileNameCache_hh]);
     XCTAssertTrue([[image description] hasPrefix:@"img2"]);
     XCTAssertTrue([[image fileNameCache_hh] hasPrefix:@"img2"]);
+}
+
+- (void)testCreateCGImage {
+    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"img1" withExtension:@"png"];
+    CGImageSourceRef imageSourceRef = CGImageSourceCreateWithURL((CFURLRef)fileURL, NULL);
+    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, NULL);
+    UIImage *image = [[UIImage alloc] initWithCGImage:imageRef];
+    XCTAssertTrue([[image description] containsString:@"img1.png"]);
+    XCTAssertTrue([image isGuessing_hh]);
+    CGImageRelease(imageRef);
 }
 
 @end

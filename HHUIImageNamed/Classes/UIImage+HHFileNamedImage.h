@@ -7,9 +7,3 @@
 //
 
 @import UIKit;
-
-OBJC_EXTERN NSString *HHUIImageNamedCandidatedFileName;
-
-@interface UIImage (HHFileNamedImage)
-
-@end
