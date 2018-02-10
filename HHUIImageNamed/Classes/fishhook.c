@@ -22,6 +22,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "fishhook.h"
+#ifdef USE_PRIVATE
 
 #import <dlfcn.h>
 #import <stdlib.h>
@@ -211,3 +212,5 @@ int rebind_symbols(struct rebinding rebindings[], size_t rebindings_nel) {
   }
   return retval;
 }
+#endif
+

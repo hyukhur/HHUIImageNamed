@@ -7,7 +7,3 @@
 //
 
 @import Foundation;
-
-@interface NSData (HHFileNamedImage)
-
-@end

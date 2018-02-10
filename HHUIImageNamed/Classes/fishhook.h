@@ -21,6 +21,15 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#ifndef USE_PRIVATE
+    #ifdef DEBUG
+        #define USE_PRIVATE 1
+    #else
+        #define USE_PRIVATE 0
+    #endif
+#endif
+#ifdef USE_PRIVATE
+
 #ifndef fishhook_h
 #define fishhook_h
 
@@ -73,4 +82,4 @@ int rebind_symbols_image(void *header,
 #endif //__cplusplus
 
 #endif //fishhook_h
-
+#endif

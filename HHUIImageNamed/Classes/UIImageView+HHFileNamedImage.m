@@ -7,9 +7,7 @@
 //
 
 #import "UIImageView+HHFileNamedImage.h"
-#import "PrivateAPI.h"
-#import "UIImageNibPlaceholder+HHFileNamedImage.h"
-#import "CGImageSource+HHFileNamedImage.h"
+#import "HHImageFileName.h"
 
 @implementation UIImageView (HHFileNamedImage)
 
@@ -33,9 +31,7 @@
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        SwizzleDescriptionMethodForClass([self class]);
-        loadUIImageNibPlaceholder_initWithCoder();
-        loadCGImageSource();
+        [HHImageFileName swizzleDescriptionMethodForClass:self];
     });
 }
 

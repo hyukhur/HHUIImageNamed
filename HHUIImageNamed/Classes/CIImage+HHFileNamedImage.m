@@ -7,19 +7,18 @@
 //
 
 #import "CIImage+HHFileNamedImage.h"
-#import <objc/runtime.h>
-#import "PrivateAPI.h"
+#import "HHImageFileName.h"
 
 @implementation CIImage (HHFileNamedImage)
 
 - (NSString *)fileName_hh
 {
-    return objc_getAssociatedObject(self, _cmd);
+    return [HHImageFileName fileNameFromCIImage:self];
 }
 
 - (void)setFileName_hh:(NSString *)fileName_hh
 {
-    objc_setAssociatedObject(self, @selector(fileName_hh), fileName_hh, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [HHImageFileName setFileName:fileName_hh CIImage:self];
 }
 
 - (NSString *)description_hh
@@ -51,10 +50,8 @@
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        SwizzleDescriptionMethodForClass([self class]);
-        {
-            method_exchangeImplementations(class_getInstanceMethod(self, @selector(initWithContentsOfURL:options:)), class_getInstanceMethod(self, @selector(initWithContentsOfURL_hh:options:)));
-        }
+        [HHImageFileName swizzleDescriptionMethodForClass:self];
+        [HHImageFileName swizzleInstanceMethod:self origin:@selector(initWithContentsOfURL:options:) modified:@selector(initWithContentsOfURL_hh:options:)];
     });
 }
 @end

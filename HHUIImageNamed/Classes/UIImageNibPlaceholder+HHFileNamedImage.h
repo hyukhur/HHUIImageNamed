@@ -8,4 +8,5 @@
 
 @import UIKit;
 
-void loadUIImageNibPlaceholder_initWithCoder(void);
+CG_EXTERN UIImage *(*UIImageNibPlaceholder_initWithCoder)(id, SEL, NSCoder*);
+CG_EXTERN UIImage *UIImageNibPlaceholder_initWithCoder_hh(id, SEL, NSCoder*);

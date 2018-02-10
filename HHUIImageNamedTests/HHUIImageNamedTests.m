@@ -9,6 +9,7 @@
 @import UIKit;
 @import XCTest;
 @import HHUIImageNamed;
+#import "HHImageFileName+Private.h"
 
 @interface UIImage ()
 @property(readonly) NSString *fileName_hh;
@@ -24,7 +25,8 @@
 
 - (void)setUp {
     [super setUp];
-    [[[NSThread currentThread] threadDictionary] removeObjectForKey:@"HHUIImageNamedCandidatedFileName"];
+    [HHImageFileName setCandidatedFileName:nil];
+    [HHImageFileName swizzleCGImageClasses];
 }
 
 - (void)tearDown {
@@ -151,17 +153,15 @@
 - (void)testCGImage {
     CGImageRef imageRef = [[UIImage imageNamed:@"img1.png"] CGImage];
     UIImage *image = [UIImage imageWithCGImage:imageRef];
-    XCTAssertTrue([[image description] containsString:@"img1.png"]);
-    XCTAssertTrue([[image description] containsString:@"Guessing"]);
-    XCTAssertTrue([image isGuessing_hh]);
+    XCTAssertTrue([[image description] hasPrefix:@"img1.png"]);
+    XCTAssertFalse([image isGuessing_hh]);
 }
 
 - (void)testCGImageWithScaleAndOrientation {
     CGImageRef imageRef = [[UIImage imageNamed:@"img1.png"] CGImage];
     UIImage *image = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:(UIImageOrientationUp)];
-    XCTAssertTrue([[image description] containsString:@"img1.png"]);
-    XCTAssertTrue([[image description] containsString:@"Guessing"]);
-    XCTAssertTrue([image isGuessing_hh]);
+    XCTAssertTrue([[image description] hasPrefix:@"img1.png"]);
+    XCTAssertFalse([image isGuessing_hh]);
 }
 
 - (void)testCIImage {
@@ -210,20 +210,24 @@
     UIGraphicsEndImageContext();
     
     XCTAssertTrue([[image description] containsString:@"img1.png"]);
-    XCTAssertTrue([[image description] containsString:@"Guessing"]);
     XCTAssertTrue([image isGuessing_hh]);
 }
 
 - (void)testXcodeAssets {
     UIImage *image = [UIImage imageNamed:@"asset_img1"];
-    XCTAssertTrue([[image description] containsString:@"asset_img1"]);
+    XCTAssertTrue([[image description] hasPrefix:@"asset_img1"]);
 }
 
 - (void)testImageInStoryboard {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *vc = [sb instantiateInitialViewController];
     UIImageView *imageView = (UIImageView *)[[vc.view subviews] firstObject];
-    XCTAssertTrue([[imageView description] hasPrefix:@"img1.png"]);
+    if ([HHImageFileName isUsePrivateAPIs]) {
+        XCTAssertTrue([[imageView description] hasPrefix:@"img1.png"]);
+    } else {
+        XCTAssertTrue([[imageView description] containsString:@"BYZ-38-t0r-view-8bC-Xf-vdC.nib"]);
+        XCTAssertTrue([imageView.image isGuessing_hh]);
+    }
 }
 
 - (void)testCache {
@@ -250,8 +254,15 @@
     CGImageSourceRef imageSourceRef = CGImageSourceCreateWithURL((CFURLRef)fileURL, NULL);
     CGImageRef imageRef = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, NULL);
     UIImage *image = [[UIImage alloc] initWithCGImage:imageRef];
-    XCTAssertTrue([[image description] containsString:@"img1.png"]);
-    XCTAssertTrue([image isGuessing_hh]);
+
+    if ([HHImageFileName isUsePrivateAPIs]) {
+        XCTAssertTrue([[image description] hasPrefix:@"img1.png"]);
+        XCTAssertFalse([image isGuessing_hh]);
+    } else {
+        XCTAssertFalse([[image description] containsString:@"img1.png"]);
+        XCTAssertFalse([image isGuessing_hh]);
+    }
+
     CGImageRelease(imageRef);
 }
 

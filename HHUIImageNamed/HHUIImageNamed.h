@@ -6,6 +6,7 @@
 //  Copyright © 2018 Hyuk Hur. All rights reserved.
 //
 
+@import Foundation;
 @import UIKit;
 
 //! Project version number for HHUIImageNamed.
@@ -21,6 +22,5 @@ FOUNDATION_EXPORT const unsigned char HHUIImageNamedVersionString[];
         #define USE_PRIVATE 1
     #else
         #define USE_PRIVATE 0
-    #eneif
-#endif
+    #endif
 #endif

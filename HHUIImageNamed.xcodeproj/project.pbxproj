@@ -7,25 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D167F5F202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D167F5D202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.h */; };
-		4D167F60202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D167F5E202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.m */; };
-		4D167F63202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D167F61202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.h */; };
 		4D167F64202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D167F62202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.m */; };
-		4D167F68202D99AE00DEF4FA /* PrivateAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D167F66202D99AE00DEF4FA /* PrivateAPI.h */; };
-		4D167F69202D99AE00DEF4FA /* PrivateAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D167F67202D99AE00DEF4FA /* PrivateAPI.m */; };
 		4D167F6C202DA22B00DEF4FA /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D167F6A202DA22B00DEF4FA /* fishhook.c */; };
+		4D167F71202DE5FE00DEF4FA /* HHImageFileName.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D167F6F202DE5FE00DEF4FA /* HHImageFileName.m */; };
+		4D167F74202EEF5F00DEF4FA /* HHImageFileName+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D167F72202EEF5F00DEF4FA /* HHImageFileName+Private.h */; };
+		4D167F75202EEF5F00DEF4FA /* HHImageFileName+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D167F73202EEF5F00DEF4FA /* HHImageFileName+Private.m */; };
 		4D427B6C2022BB760018369C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D427B6B2022BB760018369C /* Default-568h@2x.png */; };
 		4D875D66200D00B700654A55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5C5FD19D17453001D31F1 /* Images.xcassets */; };
 		4D875D70200D040600654A55 /* HHUIImageNamed.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D875D6E200D040600654A55 /* HHUIImageNamed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D875D73200D040600654A55 /* HHUIImageNamed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D875D6C200D040600654A55 /* HHUIImageNamed.framework */; };
 		4D875D74200D040600654A55 /* HHUIImageNamed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D875D6C200D040600654A55 /* HHUIImageNamed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4D875D79200D04EA00654A55 /* CIImage+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBAB711A0D11FC00E4D26F /* CIImage+HHFileNamedImage.h */; };
 		4D875D7A200D04EA00654A55 /* CIImage+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBAB721A0D11FC00E4D26F /* CIImage+HHFileNamedImage.m */; };
-		4D875D7B200D04EA00654A55 /* UIImage+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB5C61E19D25D6B001D31F1 /* UIImage+HHFileNamedImage.h */; };
 		4D875D7C200D04EA00654A55 /* UIImage+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */; };
-		4D875D7D200D04EA00654A55 /* UIImageView+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE873C919D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.h */; };
 		4D875D7E200D04EA00654A55 /* UIImageView+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE873CA19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m */; };
-		4D875D7F200D04EA00654A55 /* NSData+HHFileNamedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBAB771A0D976200E4D26F /* NSData+HHFileNamedImage.h */; };
 		4D875D80200D04EA00654A55 /* NSData+HHFileNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBAB781A0D976200E4D26F /* NSData+HHFileNamedImage.m */; };
 		4DB5C5F319D17453001D31F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C5F219D17453001D31F1 /* main.m */; };
 		4DB5C5F619D17453001D31F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5C5F519D17453001D31F1 /* AppDelegate.m */; };
@@ -73,14 +67,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4D167F5D202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGImageSource+HHFileNamedImage.h"; sourceTree = "<group>"; };
-		4D167F5E202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CGImageSource+HHFileNamedImage.m"; sourceTree = "<group>"; };
 		4D167F61202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageNibPlaceholder+HHFileNamedImage.h"; sourceTree = "<group>"; };
 		4D167F62202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageNibPlaceholder+HHFileNamedImage.m"; sourceTree = "<group>"; };
-		4D167F66202D99AE00DEF4FA /* PrivateAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateAPI.h; sourceTree = "<group>"; };
-		4D167F67202D99AE00DEF4FA /* PrivateAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivateAPI.m; sourceTree = "<group>"; };
 		4D167F6A202DA22B00DEF4FA /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		4D167F6B202DA22B00DEF4FA /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		4D167F6E202DE5FE00DEF4FA /* HHImageFileName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHImageFileName.h; sourceTree = "<group>"; };
+		4D167F6F202DE5FE00DEF4FA /* HHImageFileName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHImageFileName.m; sourceTree = "<group>"; };
+		4D167F72202EEF5F00DEF4FA /* HHImageFileName+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HHImageFileName+Private.h"; sourceTree = "<group>"; };
+		4D167F73202EEF5F00DEF4FA /* HHImageFileName+Private.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HHImageFileName+Private.m"; sourceTree = "<group>"; };
 		4D427B6B2022BB760018369C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4D875D6C200D040600654A55 /* HHUIImageNamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHUIImageNamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D875D6E200D040600654A55 /* HHUIImageNamed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHUIImageNamed.h; sourceTree = "<group>"; };
@@ -228,12 +222,12 @@
 				4DE873CA19D37EDC00E3CBEC /* UIImageView+HHFileNamedImage.m */,
 				4DDBAB771A0D976200E4D26F /* NSData+HHFileNamedImage.h */,
 				4DDBAB781A0D976200E4D26F /* NSData+HHFileNamedImage.m */,
-				4D167F5D202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.h */,
-				4D167F5E202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.m */,
 				4D167F61202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.h */,
 				4D167F62202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.m */,
-				4D167F66202D99AE00DEF4FA /* PrivateAPI.h */,
-				4D167F67202D99AE00DEF4FA /* PrivateAPI.m */,
+				4D167F6E202DE5FE00DEF4FA /* HHImageFileName.h */,
+				4D167F6F202DE5FE00DEF4FA /* HHImageFileName.m */,
+				4D167F72202EEF5F00DEF4FA /* HHImageFileName+Private.h */,
+				4D167F73202EEF5F00DEF4FA /* HHImageFileName+Private.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -252,14 +246,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D167F5F202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.h in Headers */,
-				4D875D79200D04EA00654A55 /* CIImage+HHFileNamedImage.h in Headers */,
-				4D875D7B200D04EA00654A55 /* UIImage+HHFileNamedImage.h in Headers */,
 				4D875D70200D040600654A55 /* HHUIImageNamed.h in Headers */,
-				4D875D7F200D04EA00654A55 /* NSData+HHFileNamedImage.h in Headers */,
-				4D167F63202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.h in Headers */,
-				4D875D7D200D04EA00654A55 /* UIImageView+HHFileNamedImage.h in Headers */,
-				4D167F68202D99AE00DEF4FA /* PrivateAPI.h in Headers */,
+				4D167F74202EEF5F00DEF4FA /* HHImageFileName+Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,13 +391,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D875D7E200D04EA00654A55 /* UIImageView+HHFileNamedImage.m in Sources */,
+				4D167F71202DE5FE00DEF4FA /* HHImageFileName.m in Sources */,
 				4D875D7A200D04EA00654A55 /* CIImage+HHFileNamedImage.m in Sources */,
 				4D875D80200D04EA00654A55 /* NSData+HHFileNamedImage.m in Sources */,
 				4D167F64202D92D300DEF4FA /* UIImageNibPlaceholder+HHFileNamedImage.m in Sources */,
-				4D167F60202C19B100DEF4FA /* CGImageSource+HHFileNamedImage.m in Sources */,
 				4D875D7C200D04EA00654A55 /* UIImage+HHFileNamedImage.m in Sources */,
+				4D167F75202EEF5F00DEF4FA /* HHImageFileName+Private.m in Sources */,
 				4D167F6C202DA22B00DEF4FA /* fishhook.c in Sources */,
-				4D167F69202D99AE00DEF4FA /* PrivateAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

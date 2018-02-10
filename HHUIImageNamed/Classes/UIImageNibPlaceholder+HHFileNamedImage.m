@@ -8,13 +8,12 @@
 
 #import "HHUIImageNamed.h"
 #import "UIImageNibPlaceholder+HHFileNamedImage.h"
-#import "PrivateAPI.h"
-#import <objc/runtime.h>
+#import "HHImageFileName.h"
 
 NSString *HHUIImageNibPlaceholderUIResourceName = @"UIResourceName";
-#ifdef USE_PRIVATE
-static UIImage *(*UIImageNibPlaceholder_initWithCoder)(id, SEL, NSCoder*) = NULL;
-static UIImage *UIImageNibPlaceholder_initWithCoder_hh(id self, SEL _cmd, NSCoder *aDecoder)
+
+UIImage *(*UIImageNibPlaceholder_initWithCoder)(id, SEL, NSCoder*) = NULL;
+UIImage *UIImageNibPlaceholder_initWithCoder_hh(id self, SEL _cmd, NSCoder *aDecoder)
 {
     UIImage *result = (*UIImageNibPlaceholder_initWithCoder)(self, _cmd, aDecoder);
     if (result) {
@@ -24,11 +23,4 @@ static UIImage *UIImageNibPlaceholder_initWithCoder_hh(id self, SEL _cmd, NSCode
         }
     }
     return result;
-}
-#endif
-
-void loadUIImageNibPlaceholder_initWithCoder(void) {
-#ifdef USE_PRIVATE
-    UIImageNibPlaceholder_initWithCoder = (UIImage*(*)(id, SEL, NSKeyedUnarchiver*))class_replaceMethod(NSClassFromString(@"UIImageNibPlaceholder"), @selector(initWithCoder:), (IMP)UIImageNibPlaceholder_initWithCoder_hh, "@@:@");
-#endif
 }
