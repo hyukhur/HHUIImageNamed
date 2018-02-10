@@ -67,6 +67,10 @@
     return result;
 }
 
+@end
+
+@implementation UIImage (HHFileNamedImage_Hook)
+
 #pragma mark - 
 
 - (UIImage *)resizableImageWithCapInsets_hh:(UIEdgeInsets)capInsets
