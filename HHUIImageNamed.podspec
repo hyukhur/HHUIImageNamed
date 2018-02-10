@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HHUIImageNamed"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "Drop-in style Image File Name tracking debug tool"
 
   s.description  = <<-DESC
