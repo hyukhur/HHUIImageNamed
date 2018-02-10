@@ -17,6 +17,7 @@
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
+#pragma clang diagnostic ignored "-Wimplicit-int"
 
 static CGImageSourceRef (* CGImageSourceCreateWithURL_Impl)(CFURLRef __nonnull url, CFDictionaryRef __nullable options) = NULL;
 static CGImageSourceRef CGImageSourceCreateWithURL_hh(CFURLRef __nonnull url, CFDictionaryRef __nullable options)
