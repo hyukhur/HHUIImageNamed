@@ -57,7 +57,7 @@ $ carthage build HHUIImageNamed --configuration Debug
 ```
 
 ## Usage
-🚨 It contains "Private API". Be careful it doesn't contain in your product package.
+🚨 It contains "Private API" for Storyboard. Be careful it doesn't contain in your product package.
 There is MACRO to control whether it has or not, which is called "USE_PRIVATE". you could find it in `HHUIImageNamed.h`.
 Release configuration set it zero by default not to use "Private API".
 Even if you won't like to use "Private API", you could track image file names in limitated situations.
