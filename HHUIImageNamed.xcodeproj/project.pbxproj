@@ -95,7 +95,7 @@
 		4DB5C61E19D25D6B001D31F1 /* UIImage+HHFileNamedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HHFileNamedImage.h"; sourceTree = "<group>"; };
 		4DB5C61F19D25D6B001D31F1 /* UIImage+HHFileNamedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HHFileNamedImage.m"; sourceTree = "<group>"; };
 		4DB5C62319D260CF001D31F1 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
-		4DB5C62819D2AAB7001D31F1 /* HHUIImageNamed.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HHUIImageNamed.podspec; sourceTree = "<group>"; };
+		4DB5C62819D2AAB7001D31F1 /* HHUIImageNamed.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HHUIImageNamed.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4DDBAB6B1A0D0ABB00E4D26F /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
 		4DDBAB6C1A0D0ABB00E4D26F /* img3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img3.png; sourceTree = "<group>"; };
 		4DDBAB711A0D11FC00E4D26F /* CIImage+HHFileNamedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIImage+HHFileNamedImage.h"; sourceTree = "<group>"; };
