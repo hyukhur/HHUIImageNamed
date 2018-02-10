@@ -6,11 +6,17 @@
 //  Copyright © 2018 Hyuk Hur. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @import Foundation;
 @import UIKit;
 @import CoreImage;
+
+#ifndef USE_PRIVATE
+#ifdef DEBUG
+#define USE_PRIVATE 1
+#else
+#define USE_PRIVATE 0
+#endif
+#endif
 
 @interface CIImage (HHFileNamedImage)
 @property(nonatomic, strong) NSString *fileName_hh;

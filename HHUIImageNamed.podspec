@@ -14,7 +14,7 @@ HHUIImageNamed is drop-in style debugging tool to track image's file name when w
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/hyukhur/HHUIImageNamed.git", :tag => s.version.to_s }
   s.source_files  = "**/Classes/**/*.{h,m}"
-  s.public_header_files = "HHUIImageNamed/HHUIImageNamed.h"
+  s.public_header_files = "**/Classes/**/HHImageFileName.h"
   s.requires_arc = true
   s.prefix_header_contents = "#define USE_PRIVATE 0"
 end

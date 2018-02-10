@@ -6,7 +6,6 @@
 //  Copyright © 2018 Hyuk Hur. All rights reserved.
 //
 
-#import "HHUIImageNamed.h"
 #import "UIImageNibPlaceholder+HHFileNamedImage.h"
 #import "HHImageFileName.h"
 
