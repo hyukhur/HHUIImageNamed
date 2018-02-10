@@ -19,6 +19,10 @@ HHUIImageNamed is drop-in style debugging tool to track image's file name when w
 To see the example codes, check the unit test codes.
 If you couldn't find proper function, let me know. [![GitHub issues](https://img.shields.io/github/issues/hyukhur/HHUIImageNamed.svg?style=flat-square)](https://github.com/hyukhur/HHUIImageNamed/issues)
 
+If you use exploration tools like [FLEX](https://github.com/Flipboard/FLEX), you could find out which file makes the image.
+
+![Sample Image](ImageFileName.png)
+
 ## Requirements
 * iOS8 or later
   * Actually it's iOS5+. There is no limitation if you can import it.
@@ -28,7 +32,19 @@ If you couldn't find proper function, let me know. [![GitHub issues](https://img
 HHUIImageNamed is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'HHUIImageNamed'
+  pod 'HHUIImageNamed'
+  
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      if target.name.include? "HHUIImageNamed"
+        target.build_configurations.each do |config|
+          if config.name == 'Debug'
+            config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'USE_PRIVATE=1']
+          end
+        end
+      end
+    end
+  end
 ```
 
 ### Carthage
@@ -36,6 +52,17 @@ pod 'HHUIImageNamed'
 ```ruby
 github "hyukhur/HHUIImageNamed"
 ```
+```bash
+$ carthage build HHUIImageNamed --configuration Debug
+```
+
+## Usage
+🚨 It contains "Private API". Be careful it doesn't contain in your product package.
+There is MACRO to control whether it has or not, which is called "USE_PRIVATE". you could find it in `HHUIImageNamed.h`.
+Release configuration set it zero by default not to use "Private API".
+Even if you won't like to use "Private API", you could track image file names in limitated situations.
+
+Just Drop-in 'HHUIImageNamed' and trace the image name.
 
 ## Author
 
