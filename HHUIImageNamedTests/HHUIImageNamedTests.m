@@ -32,6 +32,8 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    [[UIImage imageNamed:@"img1.png"] setFileName_hh:nil];
+    [[UIImage imageNamed:@"img1.png"] setFileNameCache_hh:nil];
 }
 
 - (void)testFinalFunction {
@@ -74,6 +76,11 @@
         UIImage *imageFiled = [[UIImage alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"img1.png"]];
         XCTAssertTrue([[imageFiled description] hasPrefix:@"img1.png"]);
     }];
+}
+
+- (void)testUIImageWithBundle {
+    UIImage *image = [UIImage imageNamed:@"img1.png" inBundle:[NSBundle mainBundle] compatibleWithTraitCollection:nil];
+    XCTAssertTrue([[image description] hasPrefix:@"img1.png"]);
 }
 
 - (void)testContentsOfFile {

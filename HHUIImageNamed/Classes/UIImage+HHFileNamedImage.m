@@ -246,6 +246,13 @@
     return image;
 }
 
++ (UIImage *)imageNamed_hh:(NSString *)name inBundle:(NSBundle *)bundle compatibleWithTraitCollection:(UITraitCollection *)traitCollection
+{
+    UIImage *image = [self imageNamed_hh:name inBundle:bundle compatibleWithTraitCollection:traitCollection];
+    [image setFileName_hh:name];
+    return image;
+}
+
 #pragma mark - 
 
 + (void)load
@@ -270,6 +277,7 @@
         [HHImageFileName swizzleClassMethod:self origin:@selector(animatedResizableImageNamed:capInsets:resizingMode:duration:) modified:@selector(animatedResizableImageNamed_hh:capInsets:resizingMode:duration:)];
         [HHImageFileName swizzleClassMethod:self origin:@selector(animatedImageWithImages:duration:) modified:@selector(animatedImageWithImages_hh:duration:)];
         [HHImageFileName swizzleClassMethod:self origin:@selector(imageNamed:) modified:@selector(imageNamed_hh:)];
+        [HHImageFileName swizzleClassMethod:self origin:@selector(imageNamed:inBundle:compatibleWithTraitCollection:) modified:@selector(imageNamed_hh:inBundle:compatibleWithTraitCollection:)];
     });
 }
 
